@@ -18,11 +18,18 @@ object SquareRoot extends App{
     else sqrtIter(improve(guess, x), x)
 
   def isGoodEnough(guess: Double, x: Double) =
-    abs(guess * guess - x) < 0.001
+    abs(guess * guess - x) / x < 0.001
 
   def improve(guess: Double, x: Double) =
     (guess + x / guess) / 2
 
   println(sqrt(2))
   println(sqrt(4))
+  //improve for small anv very large numbers
+  println(sqrt(0.001))
+  println(sqrt(0.1e-20))
+  println(sqrt(1e-6))
+  println(sqrt(1.0e20))
+  println(sqrt(1.0e50))//not terminate
+  println(sqrt(1.0e60))//not terminate
 }
