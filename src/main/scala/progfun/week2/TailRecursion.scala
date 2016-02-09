@@ -6,5 +6,6 @@ package progfun.week2
 object TailRecursion extends App{
 
   //implement a function that computes the greatest common divisor of two numbers
-  def gcd(a: Int, b: Int): Int = ???
+  def gcd(a: Int, b: Int): Int =
+    if (b == 0) a else gcd(b, a % b)
 }
