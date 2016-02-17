@@ -12,5 +12,15 @@ object ExerciseW1 {
     factorial(r, 1)/(factorial(r - c, 1) * factorial(c, 1))
   }
 
-  def balance(chars: List[Char]): Boolean = ???
+  def balance(chars: List[Char]): Boolean = {
+    def balanced(chars: List[Char], count: Int): Boolean = {
+      chars match {
+        case Nil => count == 0
+        case '(' :: tail => balanced(tail, count + 1)
+        case ')' :: tail => count > 0 && balanced(tail, count - 1)
+        case _ :: tail => balanced(tail, count)
+      }
+    }
+    balanced(chars, 0)
+  }
 }
