@@ -11,4 +11,6 @@ object ExerciseW1 {
     }
     factorial(r, 1)/(factorial(r - c, 1) * factorial(c, 1))
   }
+
+  def balance(chars: List[Char]): Boolean = ???
 }
