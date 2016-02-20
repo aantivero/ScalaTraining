@@ -23,4 +23,6 @@ object ExerciseW1 {
     }
     balanced(chars, 0)
   }
+
+  def countChange(money: Int, coins: List[Int]): Int = ???
 }
