@@ -12,6 +12,19 @@ class CountingChangeSuite extends FunSuite {
   import ExerciseW1.countChange
 
   test("There are 3 ways to give change for 4 if you have coins with denomiation 1 and 2"){
-    assert(countChange(4, List(1, 2)) == 4)
+    // 1+1+1+1, 1+1+2, 2+2
+    assert(countChange(4, List(1, 2)) === 3)
+  }
+
+  test("No coins return 0") {
+    assert(countChange(4, List()) === 0)
+  }
+
+  test("Money equals 0 return 1 posibility"){
+    assert(countChange(0, List(1, 2, 3)) === 1)
+  }
+
+  test("Money less than cero return 0"){
+    assert(countChange(-1, List(1, 2, 3)) === 0)
   }
 }
