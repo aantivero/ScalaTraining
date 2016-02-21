@@ -28,6 +28,6 @@ object ExerciseW1 {
     if(coins.isEmpty) 0
     else if(money == 0) 1
     else if(money < 0) 0
-    else 3
+    else countChange(money - coins.head, coins) + countChange(money, coins.tail)
   }
 }
