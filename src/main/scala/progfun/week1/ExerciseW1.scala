@@ -25,9 +25,12 @@ object ExerciseW1 {
   }
 
   def countChange(money: Int, coins: List[Int]): Int = {
-    if(coins.isEmpty) 0
-    else if(money == 0) 1
-    else if(money < 0) 0
-    else countChange(money - coins.head, coins) + countChange(money, coins.tail)
+    def loop(pending: Int, remaining: List[Int]): Int = {
+      if (remaining.isEmpty) 0
+      else if (pending < 0) 0
+      else if (pending == 0) 1
+      else loop(pending - remaining.head, remaining) + loop(pending, remaining.tail)
+    }
+    loop(money, coins)
   }
 }
